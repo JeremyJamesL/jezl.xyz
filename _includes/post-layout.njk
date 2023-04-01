@@ -1,0 +1,13 @@
+---
+layout: layout.njk
+---
+<div class="container py-5">
+<article>
+    <time class="time text-body-tertiary fw-light fs-6 d-inline-block mb-2" datetime="{{ date | dateIso }}">{{ post.date | dateReadable }}</time>
+    <h1 class="blog-title">
+        <a href="{{ url | url }}" class="text-decoration-none text-body-secondary fw-semibold">{{ title }}</a>
+      </h1>
+    {{content | safe}}
+</article>
+
+</div>

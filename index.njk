@@ -1,0 +1,19 @@
+---
+title: Homepage
+layout: layout.njk
+pagination:
+  data: collections.post
+  size: 10
+  reverse: true
+  alias: posts
+---
+<div class="container py-5">
+{% for post in posts %}
+  <article class="mb-5">
+    <time class="time text-body-tertiary fw-light fs-6 d-inline-block mb-2" datetime="{{ post.date | dateIso }}">{{ post.date | dateReadable }}</time>
+    <h2 class="blog-title">
+      <a href="{{ post.url | url }}" class="text-decoration-none text-body-secondary fw-semibold">{{ post.data.title }}</a>
+    </h2>
+  </article>
+{% endfor %}
+</div>

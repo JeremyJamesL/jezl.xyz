@@ -1,0 +1,15 @@
+---
+layout: layout.njk
+title: Archive
+---
+
+<div class="container py-5">
+    {% for year, yearPosts in collections.postsByYear %}
+    <h2>{{ year }}</h2>
+    <ul>
+      {% for post in yearPosts | reverse %}
+        <li>{{ post.data.title }}</li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+</div>

@@ -5,10 +5,12 @@ title: Archive
 
 <div class="container py-5">
     {% for year, yearPosts in collections.postsByYear %}
-    <h2>{{ year }}</h2>
+    <h2 class="text-dark-emphasis fw-semibold">{{ year }}</h2>
     <ul>
       {% for post in yearPosts | reverse %}
-        <li>{{ post.data.title }}</li>
+        <li><a href={{ post.url }} class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+            {{ post.data.title }}</li>
+        </a>
       {% endfor %}
     </ul>
   {% endfor %}

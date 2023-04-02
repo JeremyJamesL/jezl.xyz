@@ -10,7 +10,7 @@ module.exports = function(eleventyConfig) {
     return moment(date).toISOString();
   });
 
-
+eleventyConfig.addPassthroughCopy("bundle.js");
  
   eleventyConfig.addFilter('dateReadable', date => {
     return moment(date).utc().format('LL'); // E.g. May 31, 2019
@@ -18,7 +18,7 @@ module.exports = function(eleventyConfig) {
 
 
   eleventyConfig.addCollection("postsByYear", (collection) => {
-    return _.chain(collection.getAllSorted())
+    return _.chain(collection.getFilteredByTags("post"))
       .groupBy((post) => post.date.getFullYear())
       .toPairs()
       .reverse()
@@ -27,4 +27,5 @@ module.exports = function(eleventyConfig) {
 
   // Pass throughs
   eleventyConfig.addPassthroughCopy("style.css");
+  eleventyConfig.addPassthroughCopy("index.js");
   };

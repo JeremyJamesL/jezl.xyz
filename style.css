@@ -1,3 +1,8 @@
+:root {
+    --color-background-default: #233C61;
+    --color-font-highlight: #ffbe2e;
+}
+
 *,
 *::before,
 *::after {
@@ -6,8 +11,17 @@
     padding: 0;
 }
 
+
 h1,h2,h3,h4,h5,h6, .site-title {
     font-family: 'Lato', sans-serif;
+}
+
+header {
+    background-color: var(--color-background-default);
+}
+
+.nav li a {
+    /* color: var(--color-font-highlight) */
 }
 
 .blog-title a:hover {

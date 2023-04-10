@@ -1,0 +1,17 @@
+---
+layout: layout.njk
+title: Projects
+---
+
+<div class="container py-5">
+    {% for year, yearPosts in collections.projectsByYear %}
+    <h2 class="text-dark-emphasis fw-semibold">{{ year }}</h2>
+    <ul>
+      {% for post in yearPosts | reverse %}
+        <li><a href={{ post.data.link }} class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+            {{ post.data.title }}</li>
+        </a>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+</div>

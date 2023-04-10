@@ -3,7 +3,7 @@ title: My blog
 ---
 
 <!doctype html>
-<html lang="en" data-bs-theme="light">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +13,10 @@ title: My blog
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400&family=Lato:wght@400;700&family=Nunito&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
+    <script>
+        const theme = localStorage.getItem("theme");
+        document.querySelector('html').setAttribute("data-bs-theme", theme);
+    </script>
   </head>
   <body>
 <header class="container-fluid py-3">
@@ -27,6 +31,7 @@ title: My blog
             <ul class="nav">
                 <li class="me-2"><a href="/archive" class="text-white text-decoration-none fw-light text-opacity-75">Archive</a></li>
                 <li class="me-2"><a href="/reading-list" class="text-white text-decoration-none fw-light text-opacity-75">Reading list</a></li>
+                <li class="me-2"><a href="/projects" class="text-white text-decoration-none fw-light text-opacity-75">Projects</a></li>
             </ul>
             </div>
             <div class="col d-flex justify-content-end">

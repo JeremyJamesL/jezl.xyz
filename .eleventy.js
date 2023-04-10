@@ -25,6 +25,14 @@ eleventyConfig.addPassthroughCopy("bundle.js");
       .value();
   });
 
+  eleventyConfig.addCollection("projectsByYear", (collection) => {
+    return _.chain(collection.getFilteredByTags("projects"))
+      .groupBy((project) => project.date.getFullYear())
+      .toPairs()
+      .reverse()
+      .value();
+  });
+
   // Pass throughs
   eleventyConfig.addPassthroughCopy("style.css");
   eleventyConfig.addPassthroughCopy("index.js");

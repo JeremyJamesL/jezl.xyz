@@ -16,13 +16,14 @@ h1,h2,h3,h4,h5,h6, .site-title {
     font-family: 'Lato', sans-serif;
 }
 
+.container {
+    max-width: 900px;
+}
+
 header {
     background-color: var(--color-background-default);
 }
 
-.nav li a {
-    /* color: var(--color-font-highlight) */
-}
 
 .blog-title a:hover {
     color: black;

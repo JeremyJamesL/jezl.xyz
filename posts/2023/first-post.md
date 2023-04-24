@@ -1,8 +1,8 @@
 ---
 layout: post-layout.njk
-title: This is my first post
+title: Stay tuned
 date: 2022-05-05
 tags: ['post', '2023', 'march']
 ---
 
-This is my first post
+There will be something to come!

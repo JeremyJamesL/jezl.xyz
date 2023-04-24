@@ -12,10 +12,21 @@ modeToggle.addEventListener('change', (e) => {
         htmlDoc.setAttribute("data-bs-theme", "light")
         modeToggleLabel.innerHTML = '<i class="fa-regular fa-moon fs-4 text-white"></i>'
     }
-    console.log(localStorage.getItem("theme"))
+    // console.log(localStorage.getItem("theme"))
 })
 
-// window.addEventListener("DOMContentLoaded", () => {
-//     const theme = localStorage.getItem("theme");
-//     htmlDoc.setAttribute("data-bs-theme", theme);
-// })
+window.addEventListener("DOMContentLoaded", () => {
+    const theme = localStorage.getItem("theme");
+    htmlDoc.setAttribute("data-bs-theme", theme);
+    console.log(theme);
+    if(theme === "dark") {
+        // htmlDoc.setAttribute("data-bs-theme", "dark")
+        modeToggleLabel.innerHTML = '<i class="fa-regular fa-sun fs-4 text-white"></i>'
+        return
+    }
+    if(theme === "light") {
+        modeToggleLabel.innerHTML = '<i class="fa-regular fa-moon fs-4 text-white"></i>';
+        return
+    }
+
+})

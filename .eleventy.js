@@ -36,6 +36,7 @@ module.exports = function(eleventyConfig) {
   // Pass throughs
   eleventyConfig.addPassthroughCopy("style.css");
   eleventyConfig.addPassthroughCopy("index.js");
+  eleventyConfig.addPassthroughCopy("assets/favicon");
   };
 
 

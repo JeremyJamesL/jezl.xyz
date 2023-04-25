@@ -20,7 +20,6 @@ window.addEventListener("DOMContentLoaded", () => {
     htmlDoc.setAttribute("data-bs-theme", theme);
     console.log(theme);
     if(theme === "dark") {
-        // htmlDoc.setAttribute("data-bs-theme", "dark")
         modeToggleLabel.innerHTML = '<i class="fa-regular fa-sun fs-4 text-white"></i>'
         return
     }

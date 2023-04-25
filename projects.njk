@@ -4,14 +4,45 @@ title: Projects
 ---
 
 <div class="container py-5">
-    {% for year, yearPosts in collections.projectsByYear %}
-    <h2 class="text-dark-emphasis fw-semibold">{{ year }}</h2>
+
+  <div class="row text-center">
+    <h2>{{title}}</h2>
+  </div>
+
+  <div class="row">
+    <div class="mb-5">
+      <h3 class="mb-3">
+        Websites
+      </h3>
+      <ul>
+        {%- for post in collections['website'] -%}
+              <li><a href={{post.data.link}} class="me-2">
+                {{post.data.title}}
+              </a> -
+              <span class="fs-6 fst-italic text-body-tertiary fw-light">
+                {{ post.data.tech | join(', ') }}
+              </span>
+        {% endfor %}
+      </ul>
+    </div>
+
+  <div class="mb-5">
+    <h3 class="mb-3">
+      Web Apps
+    </h3>
     <ul>
-      {% for post in yearPosts | reverse %}
-        <li><a href={{ post.data.link }} class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-            {{ post.data.title }}</li>
-        </a>
+      {%- for post in collections['web-app'] -%}
+            <li><a href={{post.data.link}} class="me-2">
+              {{post.data.title}}
+            </a> -
+            <span class="fs-6 fst-italic text-body-tertiary fw-light">
+              {{ post.data.tech | join(', ') }}
+            </span>
       {% endfor %}
     </ul>
-  {% endfor %}
+  </div>
+
+
+  </div>
+ 
 </div>

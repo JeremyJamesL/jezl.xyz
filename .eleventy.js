@@ -1,16 +1,16 @@
-
 const moment = require('moment');
 const _ = require("lodash");
- 
 moment.locale('en');
 
+
 module.exports = function(eleventyConfig) {
+
+
   // Time
   eleventyConfig.addFilter('dateIso', date => {
     return moment(date).toISOString();
   });
 
-eleventyConfig.addPassthroughCopy("bundle.js");
  
   eleventyConfig.addFilter('dateReadable', date => {
     return moment(date).utc().format('LL'); // E.g. May 31, 2019
@@ -37,3 +37,6 @@ eleventyConfig.addPassthroughCopy("bundle.js");
   eleventyConfig.addPassthroughCopy("style.css");
   eleventyConfig.addPassthroughCopy("index.js");
   };
+
+
+

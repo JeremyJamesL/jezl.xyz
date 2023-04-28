@@ -6,3 +6,4 @@ tags: ['projects', 'web-app']
 link: https://race-report-gen.jezl.xyz/
 tech: ['HTML5', 'VanillaJS', 'CSS']
 ---
+    

@@ -11,11 +11,17 @@ module.exports = function(eleventyConfig) {
     return moment(date).toISOString();
   });
 
- 
+  // Readable date fron frontmatter
   eleventyConfig.addFilter('dateReadable', date => {
     return moment(date).utc().format('LL'); // E.g. May 31, 2019
   });
 
+  // Add excerpt support
+  eleventyConfig.setFrontMatterParsingOptions({
+    excerpt: true,
+    // Optional, default is "---"
+    excerpt_separator: "<!-- excerpt -->"
+  });
 
   eleventyConfig.addCollection("postsByYear", (collection) => {
     return _.chain(collection.getFilteredByTags("post"))
@@ -38,6 +44,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("index.js");
   eleventyConfig.addPassthroughCopy("assets/favicon");
   eleventyConfig.addPassthroughCopy("assets/docs");
+  eleventyConfig.addPassthroughCopy("assets/images");
   };
 
 

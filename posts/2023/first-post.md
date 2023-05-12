@@ -1,8 +1,12 @@
 ---
 layout: post-layout.njk
-title: Stay tuned
-date: 2022-05-05
-tags: ['post', '2023', 'march']
+title: Attention theory and the demo
+date: 2023-05-10
+image: 'pit.jpeg'
+tags: ['post', 'solutions engineering']
 ---
 
-There will be something to come!
+In progress
+
+<!-- excerpt -->
+

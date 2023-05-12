@@ -3,9 +3,10 @@ layout: layout.njk
 ---
 <div class="container py-5">
 <article>
+    <img src="../../../assets/images/{{image}}" alt="" class="d-block mb-4 border border-5">
     <time class="time text-dark-emphasis fw-light fs-6 d-inline-block mb-2" datetime="{{ date | dateIso }}">{{ post.date | dateReadable }}</time>
     <h1 class="blog-title">
-        <a href="{{ url | url }}" class="text-decoration-none fw-semibold">{{ title }}</a>
+        {{ title }}
       </h1>
     {{content | safe}}
 </article>

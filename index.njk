@@ -9,11 +9,13 @@ pagination:
 ---
 <div class="container py-5">
 {% for post in posts %}
-  <article class="mb-5">
+  <article class="mb-5 w-75">
     <time class="time text-dark-emphasis fw-light fs-6 d-inline-block mb-2" datetime="{{ post.date | dateIso }}">{{ post.date | dateReadable }}</time>
-    <h2 class="blog-title">
-      <a href="{{ post.url | url }}" class="text-decoration-none text-dark-emphasis fw-semibold">{{ post.data.title }}</a>
+    <h2>
+     {{ post.data.title }}
     </h2>
+    <p>{{ post.data.page.excerpt }}</p>
+    <a href="{{ post.url | url }}">Read more...</a>
   </article>
 {% endfor %}
 </div>

@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@11tyrocks/eleventy-plugin-sass-lightningcss": "^1.0.3",
+    "html-minifier": "^4.0.0",
     "lodash": "^4.17.21"
   }
 }

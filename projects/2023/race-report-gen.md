@@ -1,9 +1,9 @@
 ---
 layout: post-layout.njk
-title: Reddit race report generator w/ Strava API
+title: Running race report generator w/ Strava API
 date: 2023-04-10
 tags: ['projects', 'web-app']
 link: https://race-report-gen.jezl.xyz/
-tech: ['HTML5', 'VanillaJS', 'CSS']
+tech: ['React', 'SASS', 'Strava API', 'oAuth']
 ---
     

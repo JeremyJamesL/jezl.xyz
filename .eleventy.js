@@ -1,11 +1,24 @@
 const moment = require('moment');
+const htmlmin = require('html-minifier');
 const _ = require("lodash");
 moment.locale('en');
 
 
 module.exports = function(eleventyConfig) {
+  // Minify HTML
+  eleventyConfig.addTransform("htmlmin", function(content) {
+    // Prior to Eleventy 2.0: use this.outputPath instead
+    if( this.page.outputPath && this.page.outputPath.endsWith(".html") ) {
+      let minified = htmlmin.minify(content, {
+        useShortDoctype: true,
+        removeComments: true,
+        collapseWhitespace: true
+      });
+      return minified;
+    }
 
-
+    return content;
+  });
   // Time
   eleventyConfig.addFilter('dateIso', date => {
     return moment(date).toISOString();

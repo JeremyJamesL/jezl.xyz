@@ -1,4 +1,5 @@
 const moment = require('moment');
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const htmlmin = require('html-minifier');
 const _ = require("lodash");
 moment.locale('en');
@@ -28,6 +29,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter('dateReadable', date => {
     return moment(date).utc().format('LL'); // E.g. May 31, 2019
   });
+
+  eleventyConfig.addPlugin(syntaxHighlight);
 
   // Add excerpt support
   eleventyConfig.setFrontMatterParsingOptions({

@@ -2,10 +2,12 @@
 layout: layout.njk
 ---
 <div class="container py-5">
-<article>
-    <img src="../../../assets/images/{{image}}" alt="" class="d-block mb-4 border border-5">
+<article class="post">
+  {% if image%}
+    <img src="../../../assets/images/{{image}}" alt="" class="d-block mb-4 border border-5 mw-100">
+  {% endif %}
     <time class="time text-dark-emphasis fw-light fs-6 d-inline-block mb-2" datetime="{{ date | dateIso }}">{{ post.date | dateReadable }}</time>
-    <h1 class="blog-title">
+    <h1 class="blog-title mb-3">
         {{ title }}
       </h1>
     {{content | safe}}
